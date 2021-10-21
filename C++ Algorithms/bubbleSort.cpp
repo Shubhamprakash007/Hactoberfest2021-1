@@ -1,21 +1,31 @@
-#include<iostream>
-using namespace std;
+#include<stdio.h>
+int bubble(int a[], int n){
+	
+	for (int i=0;i<n-1;i++){
+		for(int j=0;j<n-i-1;j++){
+			if(a[j]>a[j+1]){
+				int temp=a[j];
+				a[j]=a[j+1];
+				a[j+1]=temp;
+			}
+			
+		}
+	}		
+}
 
 int main(){
-    int a[5]= {8,5,10,2,22};
-    int i,j,n=5,temp;
-    for(i=0;i<n;i++){
-        for(j=0;j<n-i;j++){
-                if(a[j]>a[j+1]){
-                    temp=a[j];
-                    a[j]=a[j+1];
-                    a[j+1]=temp;   
-                }
-        }
-    }
- 
-    for(i=0;i<n;i++){
-        cout<<a[i]<<" ";
-    }
-    
+	int a[20],n;
+	printf("enter size you want for array :");
+	scanf("%d",&n);
+	
+	printf(" enter elemets of array :");
+	for(int i=0;i<n;i++){
+		scanf("%d",&a[i]);
+	}
+	
+	bubble(a,n);
+    printf("sorted array :");
+	for(int i=0;i<n;i++){
+		printf("\t%d",a[i]);
+	}		
 }
